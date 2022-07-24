@@ -46,9 +46,9 @@ class Transaction(models.Model):
 
 
 class Change(models.Model):
-    name = models.CharField(default=None, null=True, max_length=20, verbose_name='Изменение имени')
-    surname = models.CharField(default=None, null=True, max_length=20, verbose_name='Изменение фамилии')
-    middle_name = models.CharField(default=None, null=True, max_length=20, verbose_name='Изменение отчества')
+    name = models.CharField(default=None, null=True, max_length=20, verbose_name='Имя')
+    surname = models.CharField(default=None, null=True, max_length=20, verbose_name='Фамилия')
+    middle_name = models.CharField(default=None, null=True, max_length=20, verbose_name='Отчество')
     email_adress = models.EmailField(default=None, null=True, verbose_name='Изменение электронной почты')
     telephone_number = models.CharField(default=None, null=True, max_length=12, verbose_name='Изменение телефона')
     password = models.TextField(default=None, null=True, verbose_name='Изменение пароля')

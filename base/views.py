@@ -23,7 +23,7 @@ def add_clients(request):
         form = ClientsForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('show/')
+            return redirect('http://127.0.0.1:8000/show/')
         else:
             error = 'Некорректные данные'
 
@@ -40,9 +40,9 @@ def show_client(request, userid):
     order = Transaction.objects.filter(client_id=userid, status_transaction='confirm').aggregate(Sum('price'))
     if request.method == 'POST':
         Client.objects.filter(id=userid).update(user_status='delete')
+        change = Change(name=client.name, surname=client.surname, middle_name=client.middle_name, user_status='delete')
+        change.save()
         return redirect('/')
     return render(request, 'base/client.html', {'client': client, 'order': order['price__sum']})
 
 
-def change_clients(request):
-    pass
