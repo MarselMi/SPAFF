@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Карточка клиетна</title>
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+        <h1>Информация о Клиенте и его транзакций </h1> <br>
+        {{ client }} <br>
+        Транзакции на сумму: {{ order }} <hr>
+        <button class="btn btn-success" type="submit">Удалить пользователя</button> <hr>
+        <a href="/">На Главную страницу</a>
+    </form>
+</body>
+</html>

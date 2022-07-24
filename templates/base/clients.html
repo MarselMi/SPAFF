@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Клиенты </title>
+</head>
+<body>
+    <form method="post">
+    {% csrf_token %}
+        <h1>Список ативных клиентов:</h1> <hr>
+        {% for client in clients %}
+        {{ client }} <p> <a href="users/{{client.id}}/">Перейти к карточке клиента</a> </p> <hr>
+        {% endfor %}
+        <a href="/">На Главную страницу</a>
+    </form>
+</body>
+</html>
